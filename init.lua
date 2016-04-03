@@ -5,6 +5,11 @@ local current_folder = (...):gsub('%.[^%.]+$', '') .. "."
 local generator = require(current_folder .. "generator")
 local mesh = {}
 
+-- Set Defaults ----------------------------------------------------------------------------
+function mesh.texture_default(texture)
+    mesh.default_texture = texture
+end
+
 ----------------------------
     -- Constructors
 ----------------------------
@@ -14,7 +19,7 @@ function mesh.cuboid_new(pos, max, uv_map, texture)
     local cuboid = {}
 
     -- Texturing defaults
-    local texture = texture or default_texture
+    local texture = texture or mesh.default_texture
     local uv_map  = uv_map or {}
     
     -- Default minimum vertex position to 0
@@ -78,7 +83,7 @@ function mesh.quad_new(pos, max, uv_map, texture)
     local quad = {}
 
     -- Texturing defaults
-    local texture = texture or default_texture
+    local texture = texture or mesh.default_texture
     local uv_map  = uv_map or {}
 
     -- Default minimum vertex position to 0
@@ -121,7 +126,7 @@ function mesh.sphere_new(pos, max, loops, uv_map)
     local sphere = {}
     
     -- Texturing defaults
-    local texture = texture or default_texture
+    local texture = texture or mesh.default_texture
     local uv_map  = uv_map or {}
     
     -- Default minimum vertex position to 0
