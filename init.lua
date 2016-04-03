@@ -121,7 +121,7 @@ function mesh.quad_new(pos, max, uv_map, texture)
 end
 
 -- Sphere constructor ----------------------------------------------------------------------
-function mesh.sphere_new(pos, max, loops, uv_map)
+function mesh.sphere_new(pos, max, loops, uv_map, texture)
     -- Our sphere object
     local sphere = {}
     
