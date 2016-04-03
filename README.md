@@ -3,6 +3,8 @@ Generates primitive mesh objects for LÖVE3D
 
 #  Usage
 ```
+mesh = require "mesh"
+
 skybox = mesh.cuboid_new(
     cpml.vec3(-500, -500, -500),
     cpml.vec3(1000, 1000, 1000),
