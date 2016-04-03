@@ -1,6 +1,8 @@
 # LÖVE3D-Mesh
 Generates primitive mesh objects for LÖVE3D
 
+![alt tag](http://i.imgur.com/X8qLr2f.png)
+
 #  Usage
 ```
 mesh = require "mesh"
