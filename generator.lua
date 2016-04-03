@@ -1,5 +1,5 @@
 ----------------------------
-    -- Primitive Meshes
+    -- Generation Functions
 ----------------------------
 local generator = {}
 
