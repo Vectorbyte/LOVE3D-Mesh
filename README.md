@@ -5,6 +5,24 @@ Generates primitive mesh objects for LÖVE3D
 ```
 mesh = require "mesh"
 
+-- Create Image parameters for mipmapping
+image_flags = {
+    srgb = select(3, love.window.getMode()).srgb,
+    mipmaps = true
+}
+
+-- Create textures
+-- Default
+default_texture = love.graphics.newImage("texture.png", image_flags)
+default_texture:setMipmapFilter("linear", 1)
+
+-- Skybox
+skybox_texture  = love.graphics.newImage("skybox.png", image_flags)
+skybox_texture:setMipmapFilter("linear", 1)
+
+-- Assign default to mesh objects
+mesh.texture_default(default_texture)
+
 skybox = mesh.cuboid_new(
     cpml.vec3(-500, -500, -500),
     cpml.vec3(1000, 1000, 1000),
