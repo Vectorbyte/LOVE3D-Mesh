@@ -4,7 +4,7 @@ Generates primitive mesh objects for LÖVE3D
 ![alt tag](http://i.imgur.com/X8qLr2f.png)
 
 #  Usage
-```
+```lua
 mesh = require "mesh"
 
 -- Create Image parameters for mipmapping
