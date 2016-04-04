@@ -9,6 +9,9 @@ mesh = require "mesh"
 
 -- Do stuff --
 
+-- Set texture default
+mesh.texture_default(default_texture)
+
 -- Create mesh objects
 skybox = mesh.cuboid_new(
     cpml.vec3(-500, -500, -500), -- Position
