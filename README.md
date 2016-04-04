@@ -7,30 +7,16 @@ Generates primitive mesh objects for LÖVE3D
 ```lua
 mesh = require "mesh"
 
--- Create Image parameters for mipmapping
-image_flags = {
-    srgb = select(3, love.window.getMode()).srgb,
-    mipmaps = true
-}
-
--- Create textures
--- Default
-default_texture = love.graphics.newImage("texture.png", image_flags)
-default_texture:setMipmapFilter("linear", 1)
-
--- Skybox
-skybox_texture  = love.graphics.newImage("skybox.png", image_flags)
-skybox_texture:setMipmapFilter("linear", 1)
-
--- Assign defaults to mesh objects
-mesh.texture_default(default_texture)
+-- Do stuff --
 
 -- Create mesh objects
 skybox = mesh.cuboid_new(
     cpml.vec3(-500, -500, -500), -- Position
     cpml.vec3(1000, 1000, 1000), -- Size
     {
-        {x = 0, y = 0, w = 512, h = 512}, -- UV map
+        {x = 0  , y = 0  , w = 512, h = 512}, -- UV map
+        {x = 256, y = 256, w = 256, h = 256}, -- You can generate UVs for each face of the cuboid,
+        -- If you don't provide more UVs, the next cuboid faces default to the last UVs provided.
     },
     skybox_texture -- Assign skybox_texture as the texture batch for this mesh
 )
@@ -43,7 +29,7 @@ sphere = mesh.sphere_new(
     -- No texture (defaults)
 )
 
-...
+-- Do more stuff --
 
 love.graphics.setShader(shader_skybox)
 mesh.draw(skybox)
@@ -54,6 +40,14 @@ mesh.draw(sphere)
 love.graphics.setShader()
 
 ```
+
+# TODO
+  - General cleanup
+  - Improve on sphere UVs
+  - Add Pyramid-Cone mesh generator
+  - Add Cyllinder mesh generator
+  - Add Geosphere mesh generator
+  - Add Subdivided Quad generator
 
 # Dependencies
   - LÖVE3D
