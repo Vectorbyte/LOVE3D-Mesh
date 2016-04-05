@@ -5,7 +5,7 @@ Generates primitive mesh objects for LÖVE3D
 
 #  Usage
 ```lua
-mesh = require "Mesh"
+mesh = require "mesh"
 
 -- Do stuff --
 
